@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Set Build - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!-- Gear Icon Settings -->
+    <div class="settings-icon" onclick="toggleAdminMenu()">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7zm0-5A1.5 1.5 0 1 1 12 13.5 1.5 1.5 0 0 1 12 10.5z"/>
+            <path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
+        </svg>
+        <div id="adminDropdown" class="admin-dropdown">
+            <a href="#" onclick="showAdminLogin(); return false;">Login as Admin</a>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <h1>Get Set Build</h1>
+        
+        <!-- Tab Buttons -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('login')">Login</button>
+            <button class="tab-btn" onclick="showTab('signup')">Sign Up</button>
+        </div>
+        
+        <!-- Login Form -->
+        <div id="loginTab" class="tab-content active">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        
+        <!-- Signup Form -->
+        <div id="signupTab" class="tab-content">
+            <form id="signupForm">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="signupPassword" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirmPassword" required minlength="6">
+                </div>
+                <button type="submit">Sign Up & Verify Email</button>
+            </form>
+            
+            <!-- OTP Verification -->
+            <div id="otpVerification" style="display: none;">
+                <p class="info-text">Check your email for the 6-digit verification code</p>
+                <form id="verifyOtpForm">
+                    <div class="form-group">
+                        <label>Enter OTP</label>
+                        <input type="text" id="otpCode" maxlength="6" required>
+                    </div>
+                    <button type="submit">Verify & Complete Signup</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Admin Login Tab -->
+        <div id="adminTab" class="tab-content">
+            <p class="info-text">Admin Login</p>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label>Admin Email</label>
+                    <input type="email" id="adminEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Admin Password</label>
+                    <input type="password" id="adminPassword" required>
+                </div>
+                <button type="submit">Login as Admin</button>
+                <button type="button" class="secondary-btn" onclick="backToMain()">Back to User Login</button>
+            </form>
+        </div>
+        
+        <p id="error-msg" class="error-msg" style="display: none;"></p>
+        <p id="success-msg" class="success-msg" style="display: none;"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

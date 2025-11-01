@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel -Get Set Build </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <h2>Admin Panel</h2>
+        <button onclick="logout()" class="logout-btn">Logout</button>
+    </nav>
+    
+    <div class="container">
+        <!-- Event Management Section -->
+        <div class="card">
+            <h3>Event Management</h3>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label>Event Name</label>
+                    <input type="text" id="eventName" placeholder="e.g., Hackathon 2025" required>
+                </div>
+                <div class="form-group">
+                    <label>Event Description</label>
+                    <input type="text" id="eventDescription" placeholder="Brief description">
+                </div>
+                <button type="submit">Add Event</button>
+            </form>
+            
+            <!-- Events List -->
+            <div style="margin-top: 30px;">
+                <h4 style="margin-bottom: 15px; font-size: 16px;">Active Events</h4>
+                <div id="eventsList"></div>
+            </div>
+        </div>
+        
+        <!-- Filter by Event -->
+        <div class="card" style="margin-top: 30px;">
+            <h3>Project Submissions</h3>
+            <div class="form-group">
+                <label>Filter by Event</label>
+                <select id="filterEvent">
+                    <option value="all">All Events</option>
+                </select>
+            </div>
+            
+            <div class="table-container">
+                <table id="projectTable">
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Email</th>
+                            <th>Team</th>
+                            <th>Project</th>
+                            <th>Status</th>
+                            <th>GitHub</th>
+                            <th>Hosted</th>
+                            <th>Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projectList">
+                        <tr>
+                            <td colspan="8" class="loading">Loading submissions...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
