@@ -1,9 +1,7 @@
 // ===== SUPABASE CONFIGURATION =====
 // REPLACE THESE WITH YOUR ACTUAL CREDENTIALS FROM SUPABASE DASHBOARD
-const SUPABASE_URL = 'https://aklmvmqevdoqgiylcein.supabase.co/';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFrbG12bXFldmRvcWdpeWxjZWluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA2NzUzNzksImV4cCI6MjA3NjI1MTM3OX0.V3qIMSsxIm9RNjbvu8QxnBuHjugAPVC8slUn2wGSinM';
-
-// Initialize Supabase client
+const SUPABASE_URL = 
+const SUPABASE_KEY = 
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 let signupEmail = '';
@@ -446,3 +444,4 @@ if (document.getElementById('projectForm')) {
         }
     });
 }
+
