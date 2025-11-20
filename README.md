@@ -14,9 +14,8 @@ A web-based platform that allows participants to submit project links and GitHub
 
 ---
 
-## Live Demo
-If deployed, include your live URL here (e.g., Vercel / Netlify / Render).  
-Example: `https://your-app.example.com`
+## Live Demo 
+`https:// getsetbuild.vercel.app`
 
 ---
 
